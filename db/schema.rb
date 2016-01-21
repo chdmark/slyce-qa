@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121014044) do
+ActiveRecord::Schema.define(version: 20160121044646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 20160121014044) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "qa_sessions", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
+  create_table "qas", force: :cascade do |t|
     t.integer  "host_id"
     t.integer  "fan_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20160121014044) do
   create_table "questions", force: :cascade do |t|
     t.string   "content"
     t.integer  "fan_id"
-    t.integer  "qa_session_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "qa_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sports", force: :cascade do |t|
