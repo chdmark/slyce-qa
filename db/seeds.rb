@@ -1,10 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Sport.create(name: "Basketball")
+
+Sport.create(name: "American Football")
 
 10.times do 
 	Athlete.create(name: Faker::Name.name, sport_id: rand(1..2))
@@ -13,16 +9,21 @@ end
 
 
 
-Sport.create(name: "Basketball")
+fans = [1,2,3,4,5,6,7,8,9,10]
 
-Sport.create(name: "American Football")
+(1..10).each do |n|
+	5.times do 
+	 QaSession.create(host_id: n, fan_id: fans.dup.shuffle.pop, start_time: Faker::Time.between(DateTime.now - 0.08, DateTime.now - 0.04), end_time: DateTime.now)
+	end
+
+end
 
 100.times do 
-	Question.create(content: Faker::Lorem.sentence, fan_id: rand(1..10))
+	Question.create(content: Faker::Lorem.sentence, fan_id: rand(1..10), qa_session_id: rand(1..10))
 end
 
 
 
-100.times do 
-	Answer.create(content: Faker::Lorem.sentence, question_id: (1..100).each {|n| n}, fan_id: rand(1..10))
+(1..100).each do |n|
+	Answer.create(content: Faker::Lorem.sentence, question_id: n, athlete_id: rand(1..10))
 end

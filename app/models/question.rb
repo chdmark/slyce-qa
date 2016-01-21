@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
-	has_one :answer
+	has_many :answers
+	belongs_to :qa
 	belongs_to :fan
 end

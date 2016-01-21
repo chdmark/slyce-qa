@@ -1,4 +1,4 @@
 class Athlete < ActiveRecord::Base
-	has_many :qa_sessions 
+	has_many :qas 
 	belongs_to :sport
 end
