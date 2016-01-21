@@ -2,7 +2,7 @@ class CreateSports < ActiveRecord::Migration
   def change
     create_table :sports do |t|
       t.string :name
-      t.refrences :athlete  
+      t.references :athlete  
       t.timestamps null: false
     end
   end
