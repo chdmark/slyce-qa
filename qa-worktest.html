@@ -115,8 +115,8 @@
         <fieldset class="inline-block">
           <legend>1. Create Q&A Session</legend>
           <input name="host_name" type="text" placeholder="host_name">
-          <input name="start_time" placeholder="start_date">
-          <input name="end_time" placeholder="end_date">
+          <input name="start_time" placeholder="YYYY-MM-DD HH:MM:SS">
+          <input name="end_time" placeholder="YYYY-MM-DD HH:MM:SS">
           <button id="create-qa" type="submit" class="btn btn-primary">POST</button>
         </fieldset>
         <div class="inline-block status hidden"></div>
@@ -141,7 +141,7 @@
         <fieldset class="inline-block">
           <legend>3. Ask a question</legend>
           <input name="qa_id" placeholder="qa_id">
-          <input name="conent" placeholder="content">
+          <input name="content" placeholder="content">
           <input name="name" placeholder="name">
           <button id="ask-question" type="submit" class="btn btn-primary">POST</button>
         </fieldset>
@@ -154,6 +154,7 @@
       <form id="answerQuestion">
         <fieldset class="inline-block">
           <legend>4. Answer a question</legend>
+          <input name="qa_id" placeholder="qa_id">
           <input name="question_id" placeholder="question_id">
           <input name="content" placeholder="content">
           <input name="image_url" placeholder="image_url">
@@ -319,7 +320,7 @@
         $body.on('submit', '#getQuestions', function(evt) {
           evt.preventDefault();
           var qa_id = $(this).find('input[name="qa_id"]').val(),
-              path = '/qa/'+qa_id+'/questions',
+              path = '/qas/'+qa_id+'/questions',
               method = 'GET';
 
           req.call(this, path, method).done(handleSuccess).fail(handleError);

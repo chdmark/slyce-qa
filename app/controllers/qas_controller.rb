@@ -23,4 +23,6 @@ class QasController < ApplicationController
 		
 		render json: @qa
 	end
+
+
 end
