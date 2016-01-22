@@ -85,24 +85,24 @@
       <ul class="tasklist">
         <li>
           <p>1. Create a QA session. QA sessions must have a <strong>host</strong> user, a <strong>start_time</strong>, and an <strong>end_time</strong>.</p>
-          <code>POST /qa</code>
+          <code>POST /qas</code>
         </li>
         <li>
           <p>2. Retrieve a QA session.</p>
-          <code>GET /qa/:qa_id</code>
+          <code>GET /qas/:qa_id</code>
         </li>
         <li>
           <p>3. Ask a question. Questions are within the context of a single QA session and must contain <strong>text</strong> and an <strong>asked_by</strong> user.</p>
-          <code>POST /question/:qa_id</code>
+          <code>POST /questions</code>
         </li>
         <li>
           <p>4. Answer a question. Can assume one answer per question. An answer can allow for either <strong>text</strong> and/or <strong>image_url</strong> as a response. It must also have an <strong>answered_by</strong> user.</p>
-          <code>POST /answer/:question_id</code>
+          <code>POST /answers</code>
         </li>
         <li>
           <p>5. Retrieve a list of questions for a given QA session. Allow for the option of filtering answered vs. non-answered questions.</p>
           <p>Each question in the result list must contain all relevant expanded models. IE: the asked_by user, the answer (if there was one), and the answered_by user.</p>
-          <code>GET /qa/:qa_id/questions</code>
+          <code>GET /qas/:qa_id/questions</code>
         </li>
       </ul>
     </section>
