@@ -155,9 +155,9 @@
         <fieldset class="inline-block">
           <legend>4. Answer a question</legend>
           <input name="question_id" placeholder="question_id">
-          <input name="text" placeholder="text">
+          <input name="content" placeholder="content">
           <input name="image_url" placeholder="image_url">
-          <input name="answered_by" placeholder="answered_by_name">
+          <input name="name" placeholder="name">
           <button id="answer-question" type="submit" class="btn btn-primary">POST</button>
         </fieldset>
         <div class="inline-block status hidden"></div>
@@ -308,7 +308,7 @@
         $body.on('submit', '#answerQuestion', function(evt) {
           evt.preventDefault();
           var question_id = $(this).find('input[name="question_id"]').val(),
-              path = '/answer/'+question_id,
+              path = '/answers',
               method = 'POST',
               params = $(this).serializeArray();
 
