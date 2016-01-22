@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :qas, only: [:create, :show]
 
-  resources :questions
+  resources :questions, only: [:create]
+  resources :answers, only: [:create]
+  root 'qas#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
