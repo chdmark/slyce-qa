@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 20160121044646) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
+    t.string   "name"
+    t.string   "image_url"
+    t.integer  "qa_id"
     t.integer  "athlete_id"
     t.integer  "question_id"
     t.datetime "created_at",  null: false
@@ -26,7 +29,6 @@ ActiveRecord::Schema.define(version: 20160121044646) do
 
   create_table "athletes", force: :cascade do |t|
     t.string   "name"
-    t.integer  "sport_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,15 +50,9 @@ ActiveRecord::Schema.define(version: 20160121044646) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "content"
+    t.string   "name"
     t.integer  "fan_id"
     t.integer  "qa_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sports", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "athlete_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

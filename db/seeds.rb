@@ -1,9 +1,5 @@
-Sport.create(name: "Basketball")
-
-Sport.create(name: "American Football")
-
 10.times do 
-	Athlete.create(name: Faker::Name.name, sport_id: rand(1..2))
+	Athlete.create(name: Faker::Name.name)
 	Fan.create(name: Faker::Name.name)
 end
 
