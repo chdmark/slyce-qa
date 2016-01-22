@@ -12,6 +12,8 @@ class QasController < ApplicationController
 
 		qa.save 
 
+		
+
 	end
 
 	def show
