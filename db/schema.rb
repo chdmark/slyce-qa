@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160121044646) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
+    t.string   "name"
     t.integer  "athlete_id"
     t.integer  "question_id"
     t.datetime "created_at",  null: false
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160121044646) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "content"
+    t.string   "name"
     t.integer  "fan_id"
     t.integer  "qa_id"
     t.datetime "created_at", null: false

@@ -142,7 +142,7 @@
           <legend>3. Ask a question</legend>
           <input name="qa_id" placeholder="qa_id">
           <input name="text" placeholder="text">
-          <input name="asked_by_name" placeholder="asked_by_name">
+          <input name="name" placeholder="asked_by_name">
           <button id="ask-question" type="submit" class="btn btn-primary">POST</button>
         </fieldset>
         <div class="inline-block status hidden"></div>
@@ -297,7 +297,7 @@
         $body.on('submit', '#askQuestion', function(evt) {
           evt.preventDefault();
           var qa_id = $(this).find('input[name="qa_id"]').val(),
-              path = '/question/'+qa_id,
+              path = '/questions',
               method = 'POST',
               params = $(this).serializeArray();
 
