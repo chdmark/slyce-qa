@@ -13,10 +13,9 @@
 ## Running the Server
 
 1. To start the server, run "rails s -p 8080". This will set localhost to 8080. 
+2. Type http://localhost:8080/ in your browser
 
-## Open the html file
-
-1. Open up "qa-worktest.html" in your browser. 
+ 
 
 ## Accessing the database
 
