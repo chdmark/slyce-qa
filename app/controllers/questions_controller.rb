@@ -1,5 +1,9 @@
 class QuestionsController < ApplicationController
 	def create
-		p params 
+		@question = Question.new(qa_id: params[:qa_id], content: params[:content], name: params[:name])
+
+		@question.save
+
+		render json: @question
 	end
 end
