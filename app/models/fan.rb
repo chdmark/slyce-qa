@@ -1,4 +1,4 @@
 class Fan < ActiveRecord::Base
-	has_many :qa
+	has_many :qas
 	has_many :questions, through: :qa
 end
